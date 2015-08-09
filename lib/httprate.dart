@@ -8,4 +8,3 @@ library httprate;
 
 // TODO: Export any libraries intended for clients of this package.
 
-export 'src/httprate_base.dart';
