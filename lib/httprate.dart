@@ -7,4 +7,3 @@
 library httprate;
 
 export 'src/rate_queue.dart';
-
