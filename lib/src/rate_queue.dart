@@ -7,7 +7,10 @@ class RateQueue{
 
   RateQueue.independent();
 
-  Future runJob(String domain, Future job()){
-    return new Future.value(null);
+  Future runJob(String domain, Future job()) async{
+    if(domain == null){
+      throw new ArgumentError.notNull('domain');
+    }
+    return await job();
   }
 }
