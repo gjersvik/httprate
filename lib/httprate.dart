@@ -6,5 +6,5 @@
 /// This is an awesome library. More dartdocs go here.
 library httprate;
 
-// TODO: Export any libraries intended for clients of this package.
+export 'src/rate_queue.dart';
 
