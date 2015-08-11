@@ -21,7 +21,7 @@ main() => group('RateQueue', () {
     }
 
     var queue = new RateQueue.independent();
-    queue.domainLimit = 2;
+    queue.hostLimit = 2;
     /// start 5 jobs at the same time. To the same domain.
     var jobs = new List.generate(5, (_) => queue.runJob('testDoamin', job));
     var results = await Future.wait(jobs);

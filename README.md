@@ -6,13 +6,21 @@ async its way to easy too just start a lot of work now.
 
 This is where Httprate comes in to save the day. It will handle the muck of rate limiting your traffic so you an
 continue to be as irresponsible with your code as you like. You just set how many calls per domain you want and Httprate
-handle the rest. And if that is to much work for you it comes with sane defaults that should just work. 
+handle the rest. And if that is to much work for you it comes with sane defaults that should just work.
+
+## Road map
+ * RateQueue queues request on a per host basis (done)
+ * Have RateClient that makes safe http calls easy.
+ * A global limit on all domains.
+ * Per domain overrides.
+ * Exponential backoff.
+ * Create convenience libraries for easy prototyping.
 
 ## Usage
 
 Httprate have three level of integrations from just works to more custom;
 
-The first are package:httprate/http.dart and package:httprate/httpbrowser.dart that is just drop in replacements for 
+**Not Implemented** The first are package:httprate/http.dart and package:httprate/httpbrowser.dart that is just drop in replacements for 
 package:http/http.dart. No code change is needed it just works.
 
     import 'package:httprate/http.dart' as http;
@@ -41,7 +49,7 @@ or if you want to go crazy and let rate limit do its work:
         }
     });
 
-The second way is use the RateClient that is proxy with the http.Clinet so that you can use it inline with other http
+**Not Implemented** The second way is use the RateClient that is proxy with the http.Clinet so that you can use it inline with other http
 middleware.
 
     import 'package:http/http.dart' show Client;
@@ -59,7 +67,7 @@ be used to limit any kind of mass future creations.
     // rateQueue is a global object that represent the default global request queue.
     // when you do it manually you need to specify what bucket your request is part of. For most practical applications
     // its the hostname but it can be any string.
-    rateQueue.do('example.com',() => http.get('http://example.com';)).then((){
+    rateQueue.runJob('example.com',() => http.get('http://example.com';)).then((){
         print("Response status: ${response.statusCode}");
         print("Response body: ${response.body}");
     });
@@ -69,4 +77,4 @@ be used to limit any kind of mass future creations.
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/gjersvik/httprate/issues
