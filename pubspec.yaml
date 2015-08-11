@@ -1,6 +1,6 @@
 name: httprate
 description: Rate limit and exponetial backoff for mainly http request.
-version: 0.0.1
+version: 0.1.0
 author: Ole Martin Gjersvik <olem@olem.org>
 homepage: https://github.com/gjersvik/httprate
 
