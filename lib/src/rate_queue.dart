@@ -30,7 +30,7 @@ class RateQueue{
   int hostLimit = 6;
 
   /// returns the default [RateQueue];
-  factory RateQueue() = rateQueue;
+  factory RateQueue() => rateQueue;
   /// creates a new independent RateQueue.
   ///
   /// This new queue share no limits or queues with any other so its great if
