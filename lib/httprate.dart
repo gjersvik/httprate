@@ -5,3 +5,4 @@
 library httprate;
 
 export 'src/rate_queue.dart';
+export 'src/rate_clinet.dart';
