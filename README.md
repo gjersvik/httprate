@@ -10,7 +10,7 @@ handle the rest. And if that is to much work for you it comes with sane defaults
 
 ## Road map
  * RateQueue queues request on a per host basis (done)
- * Have RateClient that makes safe http calls easy.
+ * Have RateClient that makes safe http calls easy. (done)
  * A global limit on all domains.
  * Per domain overrides.
  * Exponential backoff.
@@ -49,8 +49,8 @@ or if you want to go crazy and let rate limit do its work:
         }
     });
 
-**Not Implemented** The second way is use the RateClient that is proxy with the http.Clinet so that you can use it inline with other http
-middleware.
+The second way is use the RateClient that is proxy with the http.Clinet so that
+you can use it inline with other http middleware.
 
     import 'package:http/http.dart' show Client;
     import 'package:httprate/httprate.dart';
